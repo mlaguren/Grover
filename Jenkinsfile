@@ -16,7 +16,7 @@ pipeline {
         }       
         stage('Build Gem') {
             steps {
-                sh 'gem build hola.gemspec'
+                sh 'gem build grover.gemspec'
             }
         }
     }
