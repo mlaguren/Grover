@@ -5,7 +5,7 @@ pipeline {
         stage('Set Up Build Environment') {
             steps {
                 sh 'ruby -v'
-                sh 'gem install bundler'
+                sh 'bundler -v'
             }
         }
     }
