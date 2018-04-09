@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Set Up Build Environment') {
             steps {
-                echo 'Building..'
+                sh 'gem install bundler'
             }
         }
         stage('Test') {
