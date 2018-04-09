@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run Unit Tests & Generate RDOC') {
             steps {
-                sh 'rspec spec'
+                sh 'bundle exec rspec spec'
             }
         }       
         stage('Build Gem') {
