@@ -9,5 +9,15 @@ pipeline {
                 sh 'bundle install --path vendor/bundle'
             }
         }
+        stage('Run Unit Tests & Generate RDOC') {
+            steps {
+                sh 'rspec spec'
+            }
+        }       
+        stage('Build Gem') {
+            steps {
+                sh 'gem build hola.gemspec'
+            }
+        }
     }
 }
