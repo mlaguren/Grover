@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'ruby -v'
                 sh 'bundler -v'
+                sh 'bundle install --path vendor/bundle'
             }
         }
     }
