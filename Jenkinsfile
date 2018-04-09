@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Set Up Build Environment') {
             steps {
-                sh 'rbenv install -l'
+                sh 'version=`cat .ruby-version` \ rbenv install $version \ rbenv local $version \ gem install bundler'
             }
         }
         stage('Test') {
