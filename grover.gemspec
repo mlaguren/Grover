@@ -3,8 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "datorama/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "datorama"
-  spec.version       = Datorama::VERSION
+  spec.name          = "grover"
+  spec.version       = "0.1.0"
   spec.authors       = ["Melvin Laguren", "Bruce Cummins"]
   spec.email         = ["melvin@laguren.net", "btcummins@gmail.com"]
 
