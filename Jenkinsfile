@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Set Up Build Environment') {
             steps {
-                sh 'version=`cat .ruby-version` \ rbenv install $version \ rbenv local $version \ gem install bundler'
+                sh 'version=`cat .ruby-version`'
+                sh 'rbenv install $version'
+                sh 'rbenv local $version' 
+                sh 'gem install bundler'
             }
         }
         stage('Test') {
