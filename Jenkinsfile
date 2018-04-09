@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Set Up Build Environment') {
             steps {
-                sh 'gem install bundler'
+                sh 'rbenv install -l'
             }
         }
         stage('Test') {
