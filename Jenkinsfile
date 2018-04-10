@@ -11,13 +11,18 @@ pipeline {
         }
         stage('Run Unit Tests & Generate RDOC') {
             steps {
-                sh 'bundle exec rspec spec'
+                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml'
             }
         }       
         stage('Build Gem') {
             steps {
                 sh 'gem build grover.gemspec'
             }
+        }
+    }
+    post {
+        always {
+            junit 'rspec.xml'
         }
     }
 }
