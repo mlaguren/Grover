@@ -5,6 +5,7 @@ pipeline {
         stage('Set Up Build Environment') {
             steps {
                 sh 'ruby -v'
+                sh 'bundle -v'
                 sh 'bundle install --path vendor/bundle'
             }
         }
