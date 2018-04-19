@@ -4,6 +4,7 @@ require 'yaml'
 RSpec.describe Grover::DataConfig do
   describe "#readme" do
     it "should verify that the default configuration file exists" do
+      FileUtils.cp("./configuration/grover.yml.template", "./configuration/grover.yml")
       configuration = Grover::DataConfig.new
       expect(File.exists?(configuration.location)).to eq true
     end
