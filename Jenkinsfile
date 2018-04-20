@@ -17,7 +17,7 @@ pipeline {
         stage('Build Gem') {
             steps {
                 sh 'gem build grover.gemspec'
-                echo 'need to set up artifactory'
+                sh 'gem push grover-0.1.0.gem --host http://198.199.97.132:9292'
             }
         }
     }
