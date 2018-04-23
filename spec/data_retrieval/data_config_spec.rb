@@ -44,7 +44,7 @@ RSpec.describe do
       expect(configuration).to eq 'Source not supported.'
     end
     
-    it "should verify that the configuration file is correct" do
+    xit "should verify that the configuration file is correct" do
       pending ("Logic for empty keys needs to be thought through")
     end
   end
