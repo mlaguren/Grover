@@ -6,6 +6,7 @@ RSpec.describe do
   before :all do
     FileUtils.cp("./configuration/grover.yml.template", "./configuration/grover.yml")
     FileUtils.cp("./configuration/grover.yml.template", "./configuration/custom.yml")
+    FileUtils.cp("./configuration/error.yml.template", "./configuration/error.yml")
     File.open("./configuration/test.json", "w") {|f| f.write("test:  name") }
   end
   

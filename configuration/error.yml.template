@@ -1,0 +1,7 @@
+testname: demo
+SourceA:  
+  type:  txt
+  location:
+SourceB:
+  type:  s3
+  location:
