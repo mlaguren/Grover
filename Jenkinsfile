@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Publish Gem To Gem Fury') {
             steps {
-                build job: 'PublishToGemFury', parameters: [password(description: '', name: 'FURY_AUTH', value: <object of type hudson.util.Secret>)]
+                build job: 'PublishToGemFury'
             }
         }
     post {
