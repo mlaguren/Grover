@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+source "https://#{ENV['FURY_AUTH']}@gem.fury.io/mlaguren/"
 
 
 gem 'rspec', '~> 3.7'
