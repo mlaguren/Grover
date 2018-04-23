@@ -25,6 +25,7 @@ pipeline {
             junit 'rspec.xml'
             publishHTML (target: [allowMissing: false, alwaysLinkToLastBuild: false,keepAll: true,reportDir: 'coverage',reportFiles: 'index.html',reportName: "RCov Report"])
             cleanWs()
+            }
         }
     }
 }
