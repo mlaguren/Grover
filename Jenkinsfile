@@ -17,6 +17,7 @@ pipeline {
         stage('Build Gem') {
             steps {
                 sh 'gem build grover.gemspec'
+                sh 'bundle config gem.fury.io g2UgJs2Zzh5DHy9wesq5'
                 sh 'bundle exec fury push *.gem'
             }
         }
