@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh 'gem build grover.gemspec'
                 sh 'file=$(ls *.gem)'
-                sh 'curl -F package=@<$file> https://ei9CRURCEhokTsGwL8My@push.fury.io/mlaguren/'
+                sh 'curl -F package=@<$(file)> https://ei9CRURCEhokTsGwL8My@push.fury.io/mlaguren/'
             }
         }
     }
