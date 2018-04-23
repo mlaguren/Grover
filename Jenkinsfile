@@ -20,11 +20,6 @@ pipeline {
                 stash includes: '*.gem', name: 'grover'
             }
         }
-        stage('Publish Gem To Gem Fury') {
-            steps {
-                build job: 'PublishToGemFury'
-            }
-        }
     post {
         always {
             junit 'rspec.xml'
