@@ -1,7 +1,8 @@
 module Grover
   class DataConfig
-      
-   def initialize(options = {})
+    
+    TYPES = ['s3','db']
+    def initialize(options = {})
        if options.empty?
            @location = "./configuration/grover.yml"
        else
@@ -9,19 +10,26 @@ module Grover
        end
        
        @template = YAML.load_file("./configuration/grover.yml.template")
-   end 
+    end 
    
-   def location
+    def location
        @location
-   end
+    end
    
-   def set_config
-       if  File.extname(@location) != ".yml"
-           return "#{@location} file extension is invalid"
-       end
-       YAML.load_file(@location)
+    def set_config
+        if  File.extname(@location) != ".yml"
+            return "#{@location} file extension is invalid"
+        end
+        
+        setup = YAML.load_file(@location)
        
-   end
-   
+        # Check configuration types for source files
+        if ( (TYPES.include?(setup['SourceA']['type'])) && (TYPES.include?(setup['SourceB']['type'])) ) == false
+            return "Source not supported."
+        else
+            setup
+        end
+       
+    end
   end
 end

@@ -1,7 +1,7 @@
 testname: demo
 SourceA:  
-  type:  
+  type:  s3
   location:
 SourceB:
-  type:
+  type:  s3
   location:

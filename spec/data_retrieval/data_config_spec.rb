@@ -37,5 +37,14 @@ RSpec.describe do
       expect(configuration['SourceA']).to have_key('type')
       expect(configuration['SourceA']).to have_key('location')
     end
+    
+    it "should verify that an error is thrown when the data source is not identifiable" do
+      configuration = Grover::DataConfig.new({"location":"./configuration/error.yml"}).set_config
+      expect(configuration).to eq 'Source not supported.'
+    end
+    
+    it "should verify that the configuration file is correct" do
+      pending ("Logic for empty keys needs to be thought through")
+    end
   end
 end
