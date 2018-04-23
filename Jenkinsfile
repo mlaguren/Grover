@@ -17,7 +17,8 @@ pipeline {
         stage('Build Gem') {
             steps {
                 sh 'gem build grover.gemspec'
-                sh 'gem push grover-0.1.0.gem --host http://198.199.97.132:9292'
+                sh 'file=$(ls *.gem)'
+                sh 'curl -F package=@<$file> https://ei9CRURCEhokTsGwL8My@push.fury.io/mlaguren/'
             }
         }
     }
