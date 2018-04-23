@@ -16,16 +16,19 @@ pipeline {
         }       
         stage('Build Gem') {
             steps {
-                sh 'echo $BUNDLE_GEM__FURY__IO'
                 sh 'gem build grover.gemspec'
-                sh 'bundle config gem.fury.io'
-                sh 'bundle exec fury push *.gem'
+                stash includes: '*.gem', name: 'grover'
             }
         }
-    }
+        stage('Publish Gem To Gem Fury') {
+            steps {
+                build job: 'PublishToGemFury', parameters: [password(description: '', name: 'FURY_AUTH', value: <object of type hudson.util.Secret>)]
+            }
+        }
     post {
         always {
             junit 'rspec.xml'
+            
             publishHTML (target: [allowMissing: false, alwaysLinkToLastBuild: false,keepAll: true,reportDir: 'coverage',reportFiles: 'index.html',reportName: "RCov Report"])
             cleanWs()
         }
