@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://g2UgJs2Zzh5DHy9wesq5@gem.fury.io/mlaguren/
   specs:
     diff-lcs (1.3)
     docile (1.3.0)
