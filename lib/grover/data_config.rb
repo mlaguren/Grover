@@ -1,7 +1,7 @@
 module Grover
   class DataConfig
     
-    TYPES = ['s3','db']
+    TYPES = ['csv','s3','db']
     def initialize(options = {})
        if options.empty?
            @location = "./configuration/grover.yml"
