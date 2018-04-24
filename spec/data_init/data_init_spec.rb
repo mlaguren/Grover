@@ -5,6 +5,7 @@ require 'csv'
 RSpec.describe do
   before :all do
     FileUtils.cp("./configuration/grover.yml.template", "./configuration/grover.yml")
+    FileUtils.cp("./configuration/error.yml.template", "./configuration/error.yml")
   end
   
   describe "Grover::DataInit" do
