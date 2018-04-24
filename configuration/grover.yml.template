@@ -1,0 +1,7 @@
+testname: demo
+SourceA:  
+  type:  csv
+  location: ./test_data/test.csv
+SourceB:
+  type:  s3
+  location:
