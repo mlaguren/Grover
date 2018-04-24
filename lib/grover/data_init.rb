@@ -19,10 +19,12 @@ module Grover
   def download_data(source)
     
     if @configuration[source]['type'] == 'csv'
-    #   CSV.foreach(@configuration[source]['location'], headers: true) do |row|
-   #      hash << row.inspect # hash
- #      end
- #      return hash
+        
+        if File.exists?(@configuration[source]['location']) == false
+          return "File is not in given location"
+        end
+        
+       FileUtils.cp(@configuration[source]['location'], "./data/#{@epoch.to_s}/#{source}.csv")
     end
     
     
