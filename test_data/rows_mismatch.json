@@ -143,6 +143,14 @@
     "gender": "Female",
     "ip_address": "34.1.89.181"
   },
+    {
+    "id": "22",
+    "first_name": "Vikki",
+    "last_name": "Karolewski",
+    "email": "vkarolewskil@hhs.gov",
+    "gender": "Female",
+    "ip_address": "139.40.31.239"
+  },
   {
     "id": "19",
     "first_name": "Maynard",
@@ -166,14 +174,6 @@
     "email": "bpantecostk@blinklist.com",
     "gender": "Female",
     "ip_address": "211.120.206.150"
-  },
-  {
-    "id": "22",
-    "first_name": "Vikki",
-    "last_name": "Karolewski",
-    "email": "vkarolewskil@hhs.gov",
-    "gender": "Female",
-    "ip_address": "139.40.31.239"
   },
   {
     "id": "23",
