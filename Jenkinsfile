@@ -20,10 +20,10 @@ pipeline {
                 echo 'need to set up artifactory'
             }
         }
-        stage('Functional Tests'){
+        stage('Functional Tests') {
             steps {
               sh 'bundle exec cucumber'
-              }
+            }
         }
     post {
         always {
