@@ -1,0 +1,7 @@
+testname: demo
+SourceA:  
+  type:  txt
+  location:  
+SourceB:
+  type:  csv
+  location:  ./test_data/file.csv

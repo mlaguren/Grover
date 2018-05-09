@@ -17,10 +17,11 @@ pipeline {
         stage('Build Gem') {
             steps {
                 sh 'gem build grover.gemspec'
-                echo 'need to set up artifactory'
+                stash includes: '*.gem', name: 'grover'
             }
         }
     }
+        
     post {
         always {
             junit 'rspec.xml'
