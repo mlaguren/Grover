@@ -23,6 +23,7 @@ pipeline {
         stage('Functional Tests'){
             steps {
               sh 'bundle exec cucumber'
+              echo 'needs to not promote if scenario pending'
               }
         }
     post {
