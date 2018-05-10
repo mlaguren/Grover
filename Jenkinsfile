@@ -20,6 +20,11 @@ pipeline {
                 echo 'need to set up artifactory'
             }
         }
+        stage('Functional Tests'){
+            steps {
+              sh 'bundle exec cucumber'
+              }
+        }
     post {
         always {
             junit 'rspec.xml'
