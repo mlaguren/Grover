@@ -38,5 +38,13 @@ module Grover
         end
        
     end
+    
+    private
+    ##
+    # Used for unit testing
+    def location
+        @location
+    end
+    
   end
 end
