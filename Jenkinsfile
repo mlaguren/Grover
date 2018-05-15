@@ -20,6 +20,11 @@ pipeline {
                 stash includes: '*.gem', name: 'grover'
             }
         }
+        stage('Generate RDOC') {
+            steps {
+                sh 'rdoc lib'
+            }
+        }
     }
         
     post {
