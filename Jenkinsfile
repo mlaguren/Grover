@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Generate RDOC') {
             steps {
-                sh 'rdoc lib'
+                sh 'yard'
             }
         }
     }
