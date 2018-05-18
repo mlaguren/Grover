@@ -31,7 +31,7 @@ pipeline {
         always {
             junit 'rspec.xml'
             publishHTML (target: [allowMissing: false, alwaysLinkToLastBuild: false,keepAll: true,reportDir: 'coverage',reportFiles: 'index.html',reportName: "RCov Report"])
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'docs', reportFiles: 'index.html', reportName: 'YARD For Grover', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'doc', reportFiles: 'index.html', reportName: 'YARD For Grover', reportTitles: ''])
             cleanWs()
         }
     }
