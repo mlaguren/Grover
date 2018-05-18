@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Generate RDOC') {
             steps {
-                sh 'yard'
+                sh 'bundle exec yard'
             }
         }
     }
