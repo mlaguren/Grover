@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run Unit Tests & Generate RDOC') {
             steps {
-                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml'
+                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml --format html --out rspec_results.html'
             }
         }       
         stage('Build Gem') {
@@ -32,6 +32,7 @@ pipeline {
             junit 'rspec.xml'
             publishHTML (target: [allowMissing: false, alwaysLinkToLastBuild: false,keepAll: true,reportDir: 'coverage',reportFiles: 'index.html',reportName: "RCov Report"])
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'doc', reportFiles: 'index.html', reportName: 'YARD For Grover', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'rspec_results.html', reportName: 'Unit Tests', reportTitles: ''])
             cleanWs()
         }
     }
