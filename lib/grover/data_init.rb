@@ -8,7 +8,7 @@ module Grover
   
  
   def epoch
-      @epoch
+   #   @epoch
   end
   
   def setup
