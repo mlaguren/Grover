@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Run Unit Tests & Generate RDOC') {
             steps {
-                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml --format html --out rspec_results.html'
+                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml --format html --out results/rspec_results.html'
             }
         }       
         stage('Build Gem') {
