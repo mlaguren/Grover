@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'ruby243' }
+    agent { label 'grover' }
 
     stages {
         stage('Set Up Build Environment') {
