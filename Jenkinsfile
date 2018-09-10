@@ -1,8 +1,5 @@
 pipeline {
-    agent { 
-        docker { image 'grover_ruby:2.5.1' }
-        }
-
+    agent { label 'dockerbuilder' }
     stages {
         stage('Set Up Build Environment') {
             steps {
