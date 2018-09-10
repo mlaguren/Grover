@@ -6,20 +6,8 @@ pipeline {
     stages {
         stage('Set Up Build Environment') {
             steps {
-                sh 'ruby -v'
-                sh 'bundle -v'
-                sh 'bundle install --path vendor/bundle'
-            }
-        }
-        stage('Run Unit Tests & Generate RDOC') {
-            steps {
-                sh 'bundle exec rspec --format RspecJunitFormatter --out rspec.xml'
-            }
-        }       
-        stage('Build Gem') {
-            steps {
-                sh 'gem build grover.gemspec'
-                stash includes: '*.gem', name: 'grover'
+                sh 'workspace=`pwd`'
+                sh 'docker run -v ${workspace}:/grover_workspace -i grover /bin/bash -c 'bundle install --path vendor/bundle''
             }
         }
     }
